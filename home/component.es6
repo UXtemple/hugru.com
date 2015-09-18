@@ -11,7 +11,7 @@ export const PatternCard = props => (
 
 export const Home = props => (
   <Panel width={props.width}>
-    <h1>How to get Hugru?</h1>
+    <h1 style={style.title}>How to get Hugru?</h1>
 
     <h2>First</h2>
     <p>Choose the pattern for your custom made Hugru below.</p>
@@ -25,6 +25,12 @@ export const Home = props => (
     {props.patterns.list.map(pattern => <PatternCard {...props.patterns.byId[pattern]} />)}
   </Panel>
 );
+
+const style = {
+  title: {
+    fontSize: 100
+  }
+}
 
 function mapStateToProps(state, props) {
   return {
