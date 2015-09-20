@@ -21,10 +21,10 @@ export const Pattern = props => (
 const style = {
   action: {
     active: {
-      width: '100%'
+      
     },
     base: {
-      width: '80%'
+      marginTop: 20
     }
   }
 }

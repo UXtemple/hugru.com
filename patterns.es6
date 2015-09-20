@@ -2,7 +2,7 @@ const FIXED = {
   byId: {
     'carbon-fiber': {
       id: 'carbon-fiber',
-      image: '/images/carbon-fiber.jpg',
+      image: '/carbon-fiber.jpg',
       name: 'Carbon fiber'
     },
     'picnic': {

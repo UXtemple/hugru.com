@@ -1,0 +1,1 @@
+export const FONT = 'Gidole-Regular, sans-serif';
