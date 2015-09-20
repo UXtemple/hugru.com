@@ -1,7 +1,8 @@
 import { Action, Panel } from 'panels-ui';
+import { FONT } from '../style';
 import { connect } from 'react-redux';
 import React from 'react';
-import { FONT } from '../style';
+
 
 export const PatternCard = props => (
   <Action href={`${props.id}/`} activeStyle={style.action.active} hoverStyle={style.action.active} 
@@ -16,13 +17,7 @@ export const Home = props => (
     <h1 style={style.title}>Hugru is a custom made shaping cast for Sugru</h1>
 
     <h2 style={style.subtitle}>First</h2>
-    <p>Choose the pattern for your custom made Hugru below.</p>
-
-    <h2>Next</h2>
-    <p>Select how you want the Sugru to be shaped and add your message.</p>
-
-    <h2>In return</h2>
-    <p>We will produce and send you your Hugru.</p>
+    <p style={style.callout}>Choose the pattern for your custom made Hugru below.</p>
 
     {props.patterns.list.map(pattern => <PatternCard {...props.patterns.byId[pattern]} />)}
   </Panel>
@@ -38,6 +33,11 @@ const style = {
       width: '300px'
     }
   },
+  callout: {
+    fontFamily: FONT,
+    marginTop: 10,
+    textAlign: 'center'
+  },
   title: {
     fontSize: 26,
     marginBottom: 10,
@@ -46,6 +46,7 @@ const style = {
   },
   subtitle: {
     fontFamily: FONT,
+    fontSize: 15,
     marginTop: 20,
     textTransform: 'uppercase'
   }
