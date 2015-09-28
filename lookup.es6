@@ -1,3 +1,4 @@
 export default [
-  '/:patternId'
+  '/:patternId',
+  '/:patternId/:shapeId'
 ];

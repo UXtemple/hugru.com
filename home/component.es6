@@ -1,5 +1,5 @@
 import { Action, Panel } from 'panels-ui';
-import { FONT } from '../style';
+import { FONT, FONT_LIGHT } from '../style';
 import { connect } from 'react-redux';
 import React from 'react';
 
@@ -17,7 +17,7 @@ export const Home = props => (
     <h1 style={style.title}>Hugru is a custom made 3D cast to let you stylise and shape cables you are fixing with Sugru!</h1>
     <p style={style.callout}>To start, select the pattern you like the most (and the font for your custom message).
       We will print those on the inside of the cast for you to use it as a stamp for Sugru.</p>
-    {props.patterns.list.map(pattern => <PatternCard {...props.patterns.byId[pattern]} />)}
+    {props.patterns.list.map(pattern => <PatternCard {...props.patterns.byId[pattern]} key={pattern} />)}
   </Panel>
 );
 
@@ -34,14 +34,15 @@ const style = {
     }
   },
   callout: {
-    fontFamily: FONT,
     fontSize: 15,
     lineHeight: 1.5,
     marginTop: 10,
     //textAlign: 'center'
   },
   panel: {
-    alignItems: 'left'
+    alignItems: 'left',
+    fontFamily: FONT,
+    fontWeight: FONT_LIGHT
   },
   patternImage: {
     height: '100%',
@@ -54,7 +55,7 @@ const style = {
     right: 20
   },
   title: {
-    fontFamily: FONT,
+    fontWeight: FONT_LIGHT,
     fontSize: 30,
     marginBottom: 10,
     marginTop: 50,

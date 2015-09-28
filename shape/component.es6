@@ -2,23 +2,14 @@ import { Action, Panel } from 'panels-ui';
 import { FONT } from '../style';
 import { connect } from 'react-redux';
 import React from 'react';
+import Subscribe from './subscribe';
 
-
-export const ShapeCard = props => (
-  <Action href={`${props.id}/`} activeStyle={style.action.active} hoverStyle={style.action.active} 
-    style={style.action.base}>
-    <img src={props.image} alt={props.name} />
-    <button>Use</button>
-  </Action>
-);
-
-export const Pattern = props => (
+export const Shape = props => (
   <Panel width={props.width}>
     <h1 style={style.title}>{props.pattern.name}</h1>
-    <h2 style={style.subtitle}>Next</h2>
-    <p style={style.callout}>Select how you want the Sugru to be shaped and add your message.</p>
+    <h2 style={style.subtitle}>{props.shape.name}</h2>
 
-    {props.shapes.list.map(shape => <ShapeCard patternId={props.pattern.id} {...props.shapes.byId[shape]} key={shape} />)}
+    <Subscribe pattern={props.pattern.id} shape={props.shape.id} />
   </Panel>
 );
 
@@ -52,12 +43,11 @@ const style = {
   }
 }
 
-
 function mapStateToProps(state, props) {
   return {
     pattern: state.patterns.byId[props.patternId],
-    shapes: state.shapes
+    shape: state.shapes.byId[props.shapeId]
   };
 }
 
-export default connect(mapStateToProps)(Pattern);
+export default connect(mapStateToProps)(Shape);

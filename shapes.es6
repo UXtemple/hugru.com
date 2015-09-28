@@ -2,17 +2,17 @@ const FIXED = {
   byId: {
     'hook': {
       id: 'hook',
-      image: '/hook.jpg',
+      image: '/shapes/hook.jpg',
       name: 'hook'
     },
     'straight': {
       id: 'straight',
-      image: '/straight.jpg',
+      image: '/shapes/straight.jpg',
       name: 'Straight'
     },
     'wrapper': {
       id: 'wrapper',
-      image: '/wrapper.jpg',
+      image: '/shapes/wrapper.jpg',
       name: 'wrapper'
     }
   },

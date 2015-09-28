@@ -1,12 +1,10 @@
 export default {
-  background(state, props) {
-    return {};
-  },
+  background: {},
   props: {
     'patternId': ':patternId'
   },
-  title(state, props) {
-    return state.patterns.byId[props.patternId].name;
+  title(getState, props) {
+    return getState().patterns.byId[props.patternId].name;
   },
   type: 'Pattern'
 };
