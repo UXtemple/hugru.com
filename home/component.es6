@@ -5,10 +5,10 @@ import React from 'react';
 
 
 export const PatternCard = props => (
-  <Action href={`${props.id}/`} activeStyle={style.action.active} hoverStyle={style.action.active} 
+  <Action href={`${props.id}/`} activeStyle={style.action.active} hoverStyle={style.action.active}
     style={style.action.base}>
-    <img src={props.image} alt={props.name} />
-    <button style={style.use}>Use</button>
+    <img src={props.image} alt={props.name} style={style.patternImage} />
+    <button style={style.patternUse}>Use</button>
   </Action>
 );
 
@@ -24,10 +24,13 @@ export const Home = props => (
 const style = {
   action: {
     active: {
+      width: '100%'
     },
     base: {
-      alignSelf: 'stretch',
-      marginTop: 20
+      alignSelf: 'center',
+      marginTop: 20,
+      transition: 'width 0.25s linear',
+      width: '95%'
     }
   },
   callout: {
@@ -39,6 +42,16 @@ const style = {
   },
   panel: {
     alignItems: 'left'
+  },
+  patternImage: {
+    height: '100%',
+    width: '100%'
+  },
+  patternUse: {
+    cursor: 'pointer',
+    bottom: 20,
+    position: 'absolute',
+    right: 20
   },
   title: {
     fontFamily: FONT,
