@@ -1,1 +1,1 @@
-export const FONT = 'Gidole-Regular, sans-serif';
+export const FONT = 'Gotham-Light, sans-serif';

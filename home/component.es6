@@ -8,17 +8,15 @@ export const PatternCard = props => (
   <Action href={`${props.id}/`} activeStyle={style.action.active} hoverStyle={style.action.active} 
     style={style.action.base}>
     <img src={props.image} alt={props.name} />
-    <button>Use</button>
+    <button style={style.use}>Use</button>
   </Action>
 );
 
 export const Home = props => (
-  <Panel width={props.width}>
-    <h1 style={style.title}>Hugru is a custom made shaping cast for Sugru</h1>
-
-    <h2 style={style.subtitle}>First</h2>
-    <p style={style.callout}>Choose the pattern for your custom made Hugru below.</p>
-
+  <Panel width={props.width} style={style.panel}>
+    <h1 style={style.title}>Hugru is a custom made 3D cast to let you stylise and shape cables you are fixing with Sugru!</h1>
+    <p style={style.callout}>To start, select the pattern you like the most (and the font for your custom message).
+      We will print those on the inside of the cast for you to use it as a stamp for Sugru.</p>
     {props.patterns.list.map(pattern => <PatternCard {...props.patterns.byId[pattern]} />)}
   </Panel>
 );
@@ -26,29 +24,28 @@ export const Home = props => (
 const style = {
   action: {
     active: {
-      width: '320px'
     },
     base: {
-      marginTop: 20,
-      width: '300px'
+      alignSelf: 'stretch',
+      marginTop: 20
     }
   },
   callout: {
     fontFamily: FONT,
+    fontSize: 15,
+    lineHeight: 1.5,
     marginTop: 10,
-    textAlign: 'center'
+    //textAlign: 'center'
+  },
+  panel: {
+    alignItems: 'left'
   },
   title: {
-    fontSize: 26,
-    marginBottom: 10,
-    marginTop: 35,
-    textAlign: 'center'
-  },
-  subtitle: {
     fontFamily: FONT,
-    fontSize: 15,
-    marginTop: 20,
-    textTransform: 'uppercase'
+    fontSize: 30,
+    marginBottom: 10,
+    marginTop: 50,
+    //textAlign: 'center'
   }
 }
 
